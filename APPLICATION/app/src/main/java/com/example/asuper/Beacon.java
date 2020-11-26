@@ -1,5 +1,5 @@
 package com.example.asuper;
-ciao sono antonello
+
 public class Beacon {
 
     //dichiarazione stringhe
