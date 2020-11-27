@@ -20,6 +20,7 @@ public class Ricerca_Prodotto extends AppCompatActivity {
     ListView listView;
     ListViewAdapter adapter;
 
+    public static ArrayList<Prodotto> prodotti;
     String[] title;
     String[] desc;
     int[] icon;
@@ -30,6 +31,9 @@ public class Ricerca_Prodotto extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ricerca__prodotto);
+
+        System.out.println(prodotti.get(0).getNome());
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         title = new String[]{"BATTERY","BTERY","BRY","ERY"};

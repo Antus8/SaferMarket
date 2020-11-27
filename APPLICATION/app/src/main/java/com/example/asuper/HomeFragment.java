@@ -14,7 +14,8 @@ import androidx.fragment.app.Fragment;
 public class HomeFragment extends Fragment {
     private Button supermercato;
     private Button prodotto;
-    
+    private static Utente utente;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

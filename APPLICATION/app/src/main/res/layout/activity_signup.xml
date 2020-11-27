@@ -55,7 +55,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.744"
             tools:layout_conversion_absoluteHeight="51dp"
-            tools:layout_conversion_absoluteWidth="100dp" />
+            tools:layout_conversion_absoluteWidth="100dp"
+            android:onClick="registrati"/>
 
         <EditText
             android:id="@+id/nome"

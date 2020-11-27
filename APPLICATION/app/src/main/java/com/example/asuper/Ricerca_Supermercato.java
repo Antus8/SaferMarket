@@ -18,7 +18,7 @@ public class Ricerca_Supermercato extends AppCompatActivity {
 
     ListView listView;
     ListViewAdapter adapter;
-
+    public static ArrayList<Supermarket> supermarkets;
     String[] title;
     String[] desc;
     int[] icon;
@@ -28,7 +28,10 @@ public class Ricerca_Supermercato extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ricerca__supermercato);
+        setContentView(R.layout.activity_ricerca_supermercato);
+
+        System.out.println(supermarkets.get(0).getNome());
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         title = new String[]{"BATTERY","BTERY","BRY","ERY"};

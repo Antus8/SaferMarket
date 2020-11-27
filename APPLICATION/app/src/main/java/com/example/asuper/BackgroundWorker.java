@@ -45,7 +45,6 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
         String server_url = "http://192.168.1.59/connessioneadb/server.php";
         String post_data = "";
         try {
-            System.out.println("Executing first: "+ result);
             URL url = new URL(server_url);
             HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
             httpURLConnection.setRequestMethod("POST");
@@ -68,12 +67,18 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
                     String email = params[3];
                     String password = params[4];
                     String indirizzo = params[5];
+
+                    System.out.println(nome+cognome+email+password+indirizzo);
+
                     post_data = URLEncoder.encode("service","UTF-8")+"="+URLEncoder.encode("registrazione","UTF-8")+"&"
                             + URLEncoder.encode("nome","UTF-8")+"="+URLEncoder.encode(nome,"UTF-8")+"&"
                             + URLEncoder.encode("cognome","UTF-8")+"="+URLEncoder.encode(cognome,"UTF-8")+"&"
                             + URLEncoder.encode("email","UTF-8")+"="+URLEncoder.encode(email,"UTF-8")+"&"
                             + URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(password,"UTF-8")+"&"
                             + URLEncoder.encode("indirizzo","UTF-8")+"="+URLEncoder.encode(indirizzo,"UTF-8");
+
+                    System.out.println(post_data);
+
                     break;
                 }
                 case "prodotti":{
@@ -161,7 +166,8 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
                     }
                     break;
                 }
-                case "resgistrazione": {
+                case "registrazione": {
+                    System.out.println(result);
                     if (result.equals("1")) {
                         Toast.makeText(this.context, "Registrazione avvenuta con successo!\nFai il LOGIN", Toast.LENGTH_LONG).show();
                         Intent i = new Intent(context, login.class);

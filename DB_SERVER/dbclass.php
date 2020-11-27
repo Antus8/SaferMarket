@@ -8,7 +8,7 @@ class DB_functions{
 	public function storeUser($nome, $cognome, $email, $password, $indirizzo, $conn){
 		$encrypted_password = sha1($password);
 		
-		$mysql_qry = "INSERT INTO utenti VALUES('$nome','$cognome','$email','$encrypted_password','$indirizzo')";
+		$mysql_qry = "INSERT INTO utente VALUES('$email','$nome','$cognome','$encrypted_password','$indirizzo')";
 		
 		$result = mysqli_query($conn, $mysql_qry);
 		if($result == 1){
@@ -20,8 +20,8 @@ class DB_functions{
 	}
 	
 	public function login($email, $password, $conn){
-		$encrypted_password = $password;
-		$mysql_qry = "select * from utenti where email = '$email' and password = '$encrypted_password'";
+		$encrypted_password = sha1($password);
+		$mysql_qry = "select * from utente where email = '$email' and password = '$encrypted_password'";
 		$result = mysqli_query($conn, $mysql_qry);
 		if(mysqli_num_rows($result) > 0){ 
 		return "1";
@@ -32,19 +32,19 @@ class DB_functions{
 	}
 	
 	public function entra($beacon_code,$conn){
-		$mysql_qry = "update supermarket set numpersone = (numpersone + 1) where codBeacon = '$beacon_code'";
+		$mysql_qry = "update supermarket set personeallinterno = (personeallinterno + 1) where codBeacon = '$beacon_code'";
 		$result = mysqli_query($conn, $mysql_qry);
 		return $result;
 	}
 	
 	public function esci($beacon_code,$conn){
-		$mysql_qry = "update supermarket set numpersone = (numpersone - 1) where codBeacon = '$beacon_code'";
+		$mysql_qry = "update supermarket set personeallinterno = (personeallinterno - 1) where codBeacon = '$beacon_code'";
 		$result = mysqli_query($conn, $mysql_qry);
 		return $result;
 	}
 	
 	public function getSuperMarket($conn){
-		$mysql_qry = "select id, nome, via, civico, cap, numpersone, cod_beacon_ing, cod_beacon_usc from supermarket order by numpersone asc";
+		$mysql_qry = "select id, nome, via, civico, cap, personeallinterno, cod_beacon_ing, cod_beacon_usc from supermarket order by personeallinterno asc";
 		$result = mysqli_query($conn, $mysql_qry);
 		if(mysqli_num_rows($result) > 0){ 
 		$string = "";

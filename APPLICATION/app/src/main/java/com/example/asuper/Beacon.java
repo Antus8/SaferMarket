@@ -1,6 +1,14 @@
 package com.example.asuper;
 
 public class Beacon {
+
+    private String codice;
+    private String locazione;
+
+    public Beacon(String codice, String locazione){
+        this.codice = codice;
+        this.locazione = locazione;
+    }
     /*private BeaconManager mBeaconManager;
     public void onResume() {
         super.onResume();
