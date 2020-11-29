@@ -1,2 +1,4 @@
+include ':Libreria Beacon'
+include ':android-beacon-library-2.17.1'
 include ':app'
 rootProject.name = "SUPER"

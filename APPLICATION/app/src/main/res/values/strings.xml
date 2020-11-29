@@ -6,6 +6,7 @@
     <string name="navigation_drawer_open">open navigation drawer</string>
     <string name="navigation_drawer_close">close navigation drawer</string>
     <string name="login">LOGIN</string>
+    <string name="title_activity_ricerca__supermercato">Ricerca_Supermercato</string>
     <string name="title_activity_ricerca__prodotto">Ricerca_Prodotto</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
