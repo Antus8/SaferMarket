@@ -28,7 +28,7 @@ public class Ricerca_Supermercato extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ricerca_supermercato);
+        setContentView(R.layout.activity_ricerca__supermercato);
 
         System.out.println(supermarkets.get(0).getNome());
 

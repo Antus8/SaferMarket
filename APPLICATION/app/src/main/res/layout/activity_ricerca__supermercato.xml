@@ -12,7 +12,7 @@ android:background="@drawable/mobile_with_google_maps">
     layout="@layout/toolbar" />
 
 <LinearLayout
-    android:id="@+id/ricerca_supermercato"
+    android:id="@+id/ricerca__supermercato"
     android:layout_width="357dp"
     android:layout_height="982dp"
     android:layout_alignParentTop="true"
@@ -42,7 +42,7 @@ android:background="@drawable/mobile_with_google_maps">
         android:layout_marginEnd="104dp"
         android:background="@drawable/backgroung"
         android:gravity="center_horizontal"
-        android:text="@string/ricerca_supermercato"
+        android:text="Ricerca Supermercato"
         android:textAlignment="center"
         android:textColor="#ECE9E9"
         android:textSize="18sp"
