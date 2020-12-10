@@ -33,6 +33,8 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
     private String tipo;
     private AlertDialog alertDialog;
     public String result;
+    private String email;
+    private String password;
 
     BackgroundWorker(Context ctx){
         context = ctx;
@@ -54,8 +56,8 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
             BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
             switch(tipo){
                 case "login":{
-                    String email = params[1];
-                    String password = params[2];
+                    email = params[1];
+                    password = params[2];
                     post_data = URLEncoder.encode("service","UTF-8")+"="+URLEncoder.encode("login","UTF-8")+"&"
                             + URLEncoder.encode("email","UTF-8")+"="+URLEncoder.encode(email,"UTF-8")+"&"
                             +URLEncoder.encode("password","UTF-8")+"="+URLEncoder.encode(password,"UTF-8");
@@ -158,6 +160,7 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
                 case "login": {
                     if (result.equals("1")) {
                         Toast.makeText(this.context, "Benvenuto", Toast.LENGTH_LONG).show();
+                        MainActivity.utente = new Utente(email,password);
                         Intent i = new Intent(context, HomeFragment.class);
                         context.startActivity(i);
                     } else {

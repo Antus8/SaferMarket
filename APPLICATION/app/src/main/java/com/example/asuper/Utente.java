@@ -22,6 +22,11 @@ public class Utente {
     this.cap=cap;
     }
 
+    public Utente(String email, String password){
+        this.email = email;
+        this.password = password;
+    }
+
     //get e set
     public void setEmail(String email) {
         this.email = email;
