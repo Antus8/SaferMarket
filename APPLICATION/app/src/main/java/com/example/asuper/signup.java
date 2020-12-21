@@ -3,6 +3,7 @@ package com.example.asuper;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,8 +43,11 @@ public class signup extends AppCompatActivity {
                     if(!p.equals("")){
                         if(!i.equals("")) {
                             String result = "";
-                            BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-                            backgroundWorker.execute("registrazione", n, c, e, p, i);
+                            //BackgroundWorker backgroundWorker = new BackgroundWorker(this);
+                            //backgroundWorker.execute("registrazione", n, c, e, p, i);
+                            Toast.makeText(this, "Registrazione effettuata con successo!", Toast.LENGTH_LONG);
+                            Intent in = new Intent(this, login.class);
+                            startActivity(in);
                         } else Toast.makeText(this, "Inserire indirizzo!", Toast.LENGTH_LONG).show();
                     } else Toast.makeText(this, "Inserire password!", Toast.LENGTH_LONG).show();
                 } else Toast.makeText(this, "Inserire email!", Toast.LENGTH_LONG).show();

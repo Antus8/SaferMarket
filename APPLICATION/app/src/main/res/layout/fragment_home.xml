@@ -48,6 +48,7 @@
         android:foregroundGravity="center"
         android:gravity="center"
         android:text="Registrazione \n beacon"
-        app:iconGravity="end"></Button>
+        app:iconGravity="end"
+        android:onClick="Entra"></Button>
 
 </RelativeLayout>
