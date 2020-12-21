@@ -9,21 +9,24 @@ public class Supermarket {
     private String civico;
     private String cap;
     private String via;
-    private Beacon codbeacon_ingresso;
-    private Beacon codbeacon_uscita;
+
+  //  private Beacon codbeacon_ingresso;
+    //private Beacon codbeacon_uscita;
 
     //crea oggetto
-    public Supermarket(String id, String nome,String via, String civico, String cap, int numpersone, Beacon codBeacon_ingresso, Beacon codBeacon_uscita) {
+    public Supermarket(String id, String nome, String via, String civico, String cap, int numpersone){//, Beacon codBeacon_ingresso, Beacon codBeacon_uscita) {
         this.id=id;
         this.nome=nome;
         this.numpersone=numpersone;
         this.civico=civico;
         this.cap=cap;
         this.via=via;
-        this.codbeacon_ingresso=codBeacon_ingresso;
-        this.codbeacon_uscita=codBeacon_uscita;
 
+
+      //  this.codbeacon_ingresso=codBeacon_ingresso;
+       // this.codbeacon_uscita=codBeacon_uscita;
     }
+
 
     //get e set
     public void setId(String id) {
@@ -69,7 +72,9 @@ public class Supermarket {
         return via;
     }
 
-    public void setBeacon_ingresso(Beacon codbeacon_ingresso) {
+
+    }
+    /* public void setBeacon_ingresso(Beacon codbeacon_ingresso) {
         this.codbeacon_ingresso = codbeacon_ingresso;
     }
     public Beacon getBeacon_ingresso() {
@@ -81,5 +86,5 @@ public class Supermarket {
     }
     public Beacon getBeacon_uscita() {
         return codbeacon_uscita;
-    }
-}
+    }*/
+

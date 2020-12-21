@@ -7,7 +7,7 @@
     android:gravity="clip_horizontal">
 
     <Button
-        android:id="@+id/ricerca_sup"
+        android:id="@+id/ricerca"
         android:layout_width="200dp"
         android:layout_height="80dp"
         android:layout_alignParentTop="true"
@@ -17,7 +17,7 @@
         android:backgroundTint="@color/white"
         android:backgroundTintMode="add"
         android:text="Ricerca \n Supermercato"
-        android:onClick="onRicercaSupClicked"/>
+        />
 
     <Button
         android:id="@+id/ricerca_prod"
@@ -32,9 +32,10 @@
         android:foregroundGravity="fill_horizontal|center"
         android:text="Ricerca \nProdotto"
         app:iconGravity="textEnd"
-        android:onClick="onRicercaProdClicked"/>
+        />
 
     <Button
+        android:id="@+id/ricerca_beacon"
         android:layout_width="200dp"
         android:layout_height="80dp"
         android:layout_alignParentTop="true"
@@ -48,6 +49,7 @@
         android:foregroundGravity="center"
         android:gravity="center"
         android:text="Registrazione \n beacon"
-        app:iconGravity="end"></Button>
+        app:iconGravity="end"
+        ></Button>
 
 </RelativeLayout>

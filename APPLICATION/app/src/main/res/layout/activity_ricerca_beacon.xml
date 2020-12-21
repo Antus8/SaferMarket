@@ -10,11 +10,13 @@
         android:id="@+id/ricerca_beacon"
         android:layout_width="357dp"
         android:layout_height="518dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
         android:layout_marginBottom="40dp"
         android:background="#FFFFFF"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
     </LinearLayout>
 

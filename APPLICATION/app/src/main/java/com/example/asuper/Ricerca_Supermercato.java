@@ -1,59 +1,62 @@
 package com.example.asuper;
 
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.ListView;
 import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Ricerca_Supermercato extends AppCompatActivity {
-
-    ListView listView;
-    ListViewAdapter adapter;
-    public static ArrayList<Supermarket> supermarkets;
-    String[] title;
-    String[] desc;
-    int[] icon;
-    ArrayList<Model> arrayList = new ArrayList<Model>();
-
+public class Ricerca_Supermercato extends AppCompatActivity  {
+    private ExampleAdapterSupermercato adapter; //oggetto adapeter per settare la -reclycer vire
+    private List<Supermarket> exampleList; // lista dei supermercati
+    ArrayList<Supermarket> arrayList = new ArrayList<Supermarket>();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ricerca__supermercato);
-
-        System.out.println(supermarkets.get(0).getNome());
-
+        fillExampleList(); // richiama classe per la creazione della lista
+        setUpRecyclerView();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        title = new String[]{"BATTERY","BTERY","BRY","ERY"};
-        desc = new String[]{"BATTERY detail..","BTERY detail..","BRY detail..","ERY detail.."};
-        icon = new int[]{R.drawable.ic_baseline_storefront_24,R.drawable.ic_baseline_storefront_24,R.drawable.ic_baseline_storefront_24,R.drawable.ic_baseline_storefront_24};
+    }
 
-        listView=findViewById(R.id.listview2);
-
-        for(int i = 0 ; i<title.length;i++){
-            Model model = new Model(title[i],desc[i],icon[i]);
-            arrayList.add(model);
-        }
-        adapter = new ListViewAdapter(this, arrayList);
-        listView.setAdapter(adapter);
+    private void fillExampleList() {
+        exampleList = new ArrayList<>();
+        exampleList.add(new Supermarket("1111","SUPER MARKET 1"," VIA SAN GIACOMO 2","1","1222",3));
+        exampleList.add(new Supermarket("222","SUPER MARKET 2"," VIA SAN GIACOMO 3","3","1222",10));
+        exampleList.add(new Supermarket("1232","SUPER MARKET 3"," VIA SAN GIACOMO 1","52","1222",9));
+        exampleList.add(new Supermarket("1322","SUPER MARKET 4"," VIA  GIACOMO ","32","1222",10));
 
     }
 
-    @Override
+    private void setUpRecyclerView() {
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        adapter = new ExampleAdapterSupermercato(exampleList);
+
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+
+
+
+    }
+
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu,menu);
         MenuItem menuItem = menu.findItem(R.id.search);
+
         android.widget.SearchView searchView= (android.widget.SearchView) menuItem.getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -63,16 +66,8 @@ public class Ricerca_Supermercato extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                if(TextUtils.isEmpty(newText)){
-                    adapter.filter("");
-                    listView.clearTextFilter();
-                }
-                else
-                {
-                    adapter.filter(newText);
-                }
+                adapter.getFilter().filter(newText);
                 return true;
-
             }
         });
         return true;
@@ -92,5 +87,6 @@ public class Ricerca_Supermercato extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 
 }

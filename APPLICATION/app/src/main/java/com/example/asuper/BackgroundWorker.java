@@ -210,7 +210,7 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
                         prodotti.add(new Prodotto("","",nome));
                     }
                     //TODO: set prodotti as a class member and launch Ricerca_Prodotto activity
-                    Ricerca_Prodotto.prodotti = prodotti;
+                    //Ricerca_Prodotto.prodotti = prodotti;
                     Intent i = new Intent (this.context, Ricerca_Prodotto.class);
                     this.context.startActivity(i);
                     break;
@@ -232,10 +232,10 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
                         numpersone = Integer.valueOf(s.nextToken());
                         Beacon beacon_ing = new Beacon(s.nextToken(), "ingresso");
                         Beacon beacon_ex = new Beacon(s.nextToken(), "uscita");
-                        sup.add(new Supermarket(id,nome,via,civico,cap,numpersone,beacon_ing,beacon_ex));
+                        //sup.add(new Supermarket(id,nome,via,civico,cap,numpersone,beacon_ing,beacon_ex));
                     }
                     //TODO: launch activity ricerca supermercato
-                    Ricerca_Supermercato.supermarkets = sup;
+                    //Ricerca_Supermercato.supermarkets = sup;
                     Intent i = new Intent(this.context, Ricerca_Supermercato.class);
                     this.context.startActivity(i);
                     break;

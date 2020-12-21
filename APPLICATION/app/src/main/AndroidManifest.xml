@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,16 +18,18 @@
         <activity
             android:name=".Ricerca_Prodotto"
             android:label="@string/title_activity_ricerca__prodotto"
-            android:theme="@style/Theme.SUPER.NoActionBar"></activity>
+            android:theme="@style/Theme.SUPER.NoActionBar" />
+        <activity android:name=".Ricerca_Supermercato" />
+        <activity android:name=".Ricerca_Beacon" />
         <activity android:name=".login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".signup" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
-
 
 </manifest>

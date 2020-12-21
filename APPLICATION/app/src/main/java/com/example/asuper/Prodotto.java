@@ -7,11 +7,14 @@ public class Prodotto {
         private String codice;
         private String nome;
 
+
         //crea oggetto
-        public Prodotto(String idSupermarket, String codice, String nome) {
+        public Prodotto( String idSupermarket, String codice, String nome) {
             this.idSupermarket=idSupermarket;
             this.codice=codice;
             this.nome=nome;
+
+
         }
 
         //get e set
@@ -35,5 +38,7 @@ public class Prodotto {
         public String getNome() {
             return nome;
         }
-}
+
+
+    }
 
