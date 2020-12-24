@@ -28,6 +28,7 @@ public class Ricerca_Supermercato extends AppCompatActivity  {
         setUpRecyclerView();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        System.out.println("--------------------------------------"+supermarkets.get(0).getCivico());
     }
 
     private void fillExampleList() {

@@ -34,10 +34,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v)
             {
-
-
-                Intent i = new Intent(getContext(), Ricerca_Supermercato.class);
-                startActivity(i);
+                BackgroundWorker b = new BackgroundWorker(getContext());
+                b.execute("supermercati");
             }
         });
 
@@ -53,8 +51,8 @@ public class HomeFragment extends Fragment {
         prodotto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getContext(), Ricerca_Prodotto.class);
-                startActivity(i);
+                BackgroundWorker b = new BackgroundWorker(getContext());
+                b.execute("prodotto");
             }
         });
         utente = new Utente("campo@gmil.com", "Antonio", "Camposeo", "1234", "Via Tony", "Civitas", "70013");
@@ -68,11 +66,6 @@ public class HomeFragment extends Fragment {
     //   Intent i = new Intent(this.getContext(), Ricerca_Supermercato.class);
     // startActivity(i);
     // }
-
-    public void onRicercaProdClicked(){
-        Intent i = new Intent(this.getContext(), Ricerca_Prodotto.class);
-        startActivity(i);
-    }
 
     public void Entra(){
         try {

@@ -74,7 +74,7 @@ class DB_functions{
 		$string = "";
 		for ($x = 0; $x < mysqli_num_rows($result); $x++){
 			$resrow = mysqli_fetch_row($result);
-			$string = $string.$nome.";";
+			$string = $string.$resrow[0].";";
 		}
 			return $string;
 		}

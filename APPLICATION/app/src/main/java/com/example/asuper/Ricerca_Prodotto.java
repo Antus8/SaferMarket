@@ -29,6 +29,7 @@ public class Ricerca_Prodotto extends AppCompatActivity  {
         setUpRecyclerView();
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        System.out.println("--------------------------------------"+prodotti.get(0).getNome());
     }
 
     private void fillExampleList() {

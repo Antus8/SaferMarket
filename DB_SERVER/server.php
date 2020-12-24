@@ -20,6 +20,8 @@ switch($service){
 	case "login":{
 		$email = $_POST['email'];
 		$password = $_POST['password'];
+		#$email = "a.longo@poliba.it";
+		#$password = "antonello";
 		$user = $db->login($email, $password, $conn);
 		print $user;
 		break;
