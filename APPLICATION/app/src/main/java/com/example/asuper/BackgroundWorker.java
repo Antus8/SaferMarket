@@ -44,6 +44,7 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
     @Override
     protected String doInBackground(String[] params) {
         tipo = params[0];
+        System.out.print("Working 1");
         String server_url = "http://192.168.1.59/connessioneadb/server.php";
         String post_data = "";
         try {
@@ -120,7 +121,7 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
             bufferedWriter.flush();
             bufferedWriter.close();
             outputStream.close();
-
+            System.out.print("Working 2");
             //PER GESTIRE LA RISPOSTA
             InputStream inputStream = httpURLConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
@@ -135,6 +136,7 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
             inputStream.close();
             httpURLConnection.disconnect();
             System.out.println("Received: "+result);
+            System.out.print("Working 3");
             return result;
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -161,7 +163,7 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
                     if (result.equals("1")) {
                         Toast.makeText(this.context, "Benvenuto", Toast.LENGTH_LONG).show();
                         MainActivity.utente = new Utente(email,password);
-                        Intent i = new Intent(context, HomeFragment.class);
+                        Intent i = new Intent(context, MainActivity.class);
                         context.startActivity(i);
                     } else {
                         alertDialog.setMessage("Utente non registrato!");

@@ -31,7 +31,6 @@ public class login extends AppCompatActivity {
         password = (EditText) findViewById(R.id.password);
         registrazione = (TextView) findViewById(R.id.registrazione);
         Button b = findViewById(R.id.login);
-        backgroundWorker = new BackgroundWorker(this);
     }
 
     public void apriRegistrazione(View view){
@@ -44,6 +43,7 @@ public class login extends AppCompatActivity {
         String user_pw = password.getText().toString();
         String result = "";
         if(!user_email.equals("") && !user_pw.equals("") && user_email != null && user_pw != null){
+            backgroundWorker = new BackgroundWorker(this);
             backgroundWorker.execute("login", user_email, user_pw);
         }
         else {
