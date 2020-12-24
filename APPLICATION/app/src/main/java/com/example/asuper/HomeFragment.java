@@ -15,12 +15,16 @@ public class HomeFragment extends Fragment {
     private Button supermercato;
     private Button prodotto;
     private static Utente utente;
+    private View view;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        supermercato = (Button) getView().findViewById(R.id.ricerca_sup);
-        prodotto = (Button) getView().findViewById(R.id.ricerca_prod);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+
+        supermercato = (Button) view.findViewById(R.id.ricerca_sup);
+        prodotto = (Button) view.findViewById(R.id.ricerca_prod);
         return inflater.inflate(R.layout.fragment_home,container,false);
     }
 
