@@ -34,10 +34,10 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v)
             {
-                
-                /*
+
+
                 Intent i = new Intent(getContext(), Ricerca_Supermercato.class);
-                startActivity(i);*/
+                startActivity(i);
             }
         });
 
