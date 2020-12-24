@@ -25,6 +25,15 @@ public class Supermarket {
 
     }
 
+    public Supermarket(String id, String nome,String via, String civico, String cap, int numpersone) {
+        this.id=id;
+        this.nome=nome;
+        this.numpersone=numpersone;
+        this.civico=civico;
+        this.cap=cap;
+        this.via=via;
+    }
+
     //get e set
     public void setId(String id) {
         this.id = id;

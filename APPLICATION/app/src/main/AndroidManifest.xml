@@ -17,7 +17,8 @@
         android:theme="@style/Theme.SUPER"
         android:usesCleartextTraffic="true"
         >
-
+        <activity android:name=".Ricerca_Supermercato"/>
+        <activity android:name=".Ricerca_Beacon"/>
         <activity
             android:name=".Ricerca_Prodotto"
             android:label="@string/title_activity_ricerca__prodotto"
