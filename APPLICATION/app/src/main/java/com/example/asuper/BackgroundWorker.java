@@ -44,7 +44,6 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
     @Override
     protected String doInBackground(String[] params) {
         tipo = params[0];
-        System.out.print("Working 1");
         String server_url = "http://192.168.1.59/connessioneadb/server.php";
         String post_data = "";
         try {
@@ -121,7 +120,7 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
             bufferedWriter.flush();
             bufferedWriter.close();
             outputStream.close();
-            System.out.print("Working 2");
+
             //PER GESTIRE LA RISPOSTA
             InputStream inputStream = httpURLConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
@@ -135,8 +134,7 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
             bufferedReader.close();
             inputStream.close();
             httpURLConnection.disconnect();
-            System.out.println("Received: "+result);
-            System.out.print("Working 3");
+            System.out.println("--------------------------------------------------------------------Received: "+result);
             return result;
         } catch (MalformedURLException e) {
             e.printStackTrace();
@@ -157,17 +155,18 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         if(result!=null) {
-            System.out.println(result);
+            System.out.println("---------------------------------------------"+result);
             switch (tipo) {
                 case "login": {
-                    if (result.equals("1")) {
+                    if (result.equals("0")) {
+                        alertDialog.setMessage("Utente non registrato!\nSi prega di registrarsi");
+                        alertDialog.show();
+                    } else {
                         Toast.makeText(this.context, "Benvenuto", Toast.LENGTH_LONG).show();
-                        MainActivity.utente = new Utente(email,password);
+                        StringTokenizer st = new StringTokenizer(result,";");
+                        MainActivity.utente = new Utente(st.nextToken(),st.nextToken(), st.nextToken(), st.nextToken());
                         Intent i = new Intent(context, MainActivity.class);
                         context.startActivity(i);
-                    } else {
-                        alertDialog.setMessage("Utente non registrato!");
-                        alertDialog.show();
                     }
                     break;
                 }

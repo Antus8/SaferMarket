@@ -46,7 +46,7 @@ public class Ricerca_Prodotto extends AppCompatActivity  {
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        adapter = new ExampleAdapter(exampleList);
+        adapter = new ExampleAdapter(prodotti);
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);

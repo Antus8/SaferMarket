@@ -44,7 +44,7 @@ public class Ricerca_Supermercato extends AppCompatActivity  {
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        adapter = new ExampleAdapterSupermercato(exampleList);
+        adapter = new ExampleAdapterSupermercato(supermarkets);
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);

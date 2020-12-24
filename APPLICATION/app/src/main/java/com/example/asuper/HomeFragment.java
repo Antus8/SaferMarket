@@ -17,7 +17,6 @@ import static java.lang.Thread.*;
 public class HomeFragment extends Fragment {
     private Button supermercato;
     private Button prodotto,beacon;
-    private static Utente utente;
     View view;
 
     @Nullable
@@ -55,24 +54,6 @@ public class HomeFragment extends Fragment {
                 b.execute("prodotto");
             }
         });
-        utente = new Utente("campo@gmil.com", "Antonio", "Camposeo", "1234", "Via Tony", "Civitas", "70013");
-        //return inflater.inflate(R.layout.fragment_home,container,false);
         return view;
     }
-
-    // public void onRicercaSupClicked(){
-    //BackgroundWorker b = new BackgroundWorker(this.getContext());
-    //b.execute("supermercati");
-    //   Intent i = new Intent(this.getContext(), Ricerca_Supermercato.class);
-    // startActivity(i);
-    // }
-
-    public void Entra(){
-        try {
-            sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        Toast.makeText(this.getContext(), utente.getNome() + " registrato nel Supermercato", Toast.LENGTH_LONG).show();
-
-    }}
+    }

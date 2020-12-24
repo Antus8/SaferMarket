@@ -1,10 +1,12 @@
 package com.example.asuper;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -44,14 +46,6 @@ public class Ricerca_Beacon extends AppCompatActivity {
             }
         });
 
-       /* findViewById(R.id.buttonInterrompiConnessione).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                stopTask();
-                abled = false;
-            }
-        }); */
-
     }
 
     private void init() {
@@ -72,6 +66,9 @@ public class Ricerca_Beacon extends AppCompatActivity {
         this.layout_connessione_beacon.setVisibility(View.GONE);
         TextView connesso = (TextView) findViewById(R.id.textView);
         connesso.setVisibility(View.VISIBLE);
+        Toast.makeText(this, "Benvenuto nel Supermercato "+MainActivity.utente.getNome(),Toast.LENGTH_LONG).show();
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
     }
 
 

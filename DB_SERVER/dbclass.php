@@ -24,7 +24,12 @@ class DB_functions{
 		$mysql_qry = "select * from utente where email = '$email' and password = '$encrypted_password'";
 		$result = mysqli_query($conn, $mysql_qry);
 		if(mysqli_num_rows($result) > 0){ 
-		return "1";
+		$resrow = mysqli_fetch_row($result);
+			$email = $resrow[0];
+			$nome = $resrow[1];
+			$cognome = $resrow[2];
+			$indirizzo = $resrow[4];
+		return $email.";".$nome.";".$cognome.";".$indirizzo;
 		}
 		else{
 			return "0";

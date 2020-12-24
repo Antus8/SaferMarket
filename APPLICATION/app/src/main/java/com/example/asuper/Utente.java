@@ -22,6 +22,13 @@ public class Utente {
     this.cap=cap;
     }
 
+    public Utente(String email, String nome, String cognome, String via) {
+        this.email=email;
+        this.nome=nome;
+        this.cognome=cognome;
+        this.via=via;
+    }
+
     public Utente(String email, String password){
         this.email = email;
         this.password = password;
